@@ -9,23 +9,27 @@ namespace Inventory.Data
 {
     public class Product
     {
+        [Display(Name = "Follow Up")]
         public bool IsFlagged { get; set; }
 
-        [Key]
-        public string Number { get; set; } //item numbers include both letters & numbers
+        [Display(Name = "Item Number")]
+        public string Number { get; set; }
 
-        [Required]
+        [Display(Name = "Item Name")]
         public string Name { get; set; }
 
-        [Required]
         public int Quantity { get; set; }
 
-        [Required]
-        public string Location { get; set; } //locations can include combination of letters and numbers
+        public string Location { get; set; }
 
         public string Comments { get; set; }
 
-        [Required]
-        public string UserName { get; set; } //foreign key
+        [Display(Name="Manager")]
+        public string UserName { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
