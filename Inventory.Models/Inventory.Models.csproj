@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateEmployee.cs" />
+    <Compile Include="CreateProduct.cs" />
+    <Compile Include="DetailsEmployee.cs" />
+    <Compile Include="DetailsProduct.cs" />
+    <Compile Include="EditEmployee.cs" />
+    <Compile Include="EditProduct.cs" />
     <Compile Include="EmployeeListItem.cs" />
     <Compile Include="ProductListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

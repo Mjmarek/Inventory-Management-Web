@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Inventory.Models
 {
-
-    public class EmployeeListItem
+    public class EditEmployee
     {
+        public int EmployeeId { get; set; }
+
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
