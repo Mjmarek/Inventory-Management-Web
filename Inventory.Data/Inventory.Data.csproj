@@ -55,12 +55,22 @@
   <ItemGroup>
     <Compile Include="Employee.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\201712061220335_Add Employee and Product tables.cs" />
+    <Compile Include="Migrations\201712061220335_Add Employee and Product tables.Designer.cs">
+      <DependentUpon>201712061220335_Add Employee and Product tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712061220335_Add Employee and Product tables.resx">
+      <DependentUpon>201712061220335_Add Employee and Product tables.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
