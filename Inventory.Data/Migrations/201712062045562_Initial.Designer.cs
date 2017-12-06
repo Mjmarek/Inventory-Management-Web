@@ -13,7 +13,7 @@ namespace Inventory.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201712061956209_Initial"; }
+            get { return "201712062045562_Initial"; }
         }
         
         string IMigrationMetadata.Source

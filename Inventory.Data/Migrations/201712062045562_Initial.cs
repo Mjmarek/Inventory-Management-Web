@@ -25,6 +25,7 @@ namespace Inventory.Data.Migrations
                     {
                         ProductId = c.String(nullable: false, maxLength: 128),
                         Flag = c.Int(nullable: false),
+                        Number = c.String(nullable: false),
                         Name = c.String(nullable: false),
                         Quantity = c.Int(nullable: false),
                         Location = c.String(nullable: false),

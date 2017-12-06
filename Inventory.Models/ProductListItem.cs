@@ -7,25 +7,23 @@ using System.Threading.Tasks;
 
 namespace Inventory.Models
 {
-    public class InventoryListItem
+    public class ProductListItem
     {
-        public bool IsFlagged { get; set; }
+        [Display(Name = "Follow Up")]
+        public int Flag { get; set; }
 
-        [Key]
+        [Display(Name = "Item Number")]
         public string Number { get; set; } //item numbers include both letters & numbers
 
-        [Required]
         public string Name { get; set; }
 
-        [Required]
         public int Quantity { get; set; }
 
-        [Required]
         public string Location { get; set; } //locations can include combination of letters and numbers
 
         public string Comments { get; set; }
 
-        [Required]
+        [Display(Name = "Manager")]
         public string UserName { get; set; } //foreign key
     }
 }

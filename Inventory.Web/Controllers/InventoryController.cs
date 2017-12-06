@@ -13,7 +13,7 @@ namespace Inventory.Web.Controllers
         // GET: Inventory
         public ActionResult Index()
         {
-            var model = new InventoryListItem[0];
+            var model = new ProductListItem[0];
             return View(model);
         }
     }
