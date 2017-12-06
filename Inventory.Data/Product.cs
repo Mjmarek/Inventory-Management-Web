@@ -9,27 +9,23 @@ namespace Inventory.Data
 {
     public class Product
     {
-        [Display(Name = "Follow Up")]
-        public bool IsFlagged { get; set; }
+        [Key]
+        public string ProductId { get; set; }
 
-        [Display(Name = "Item Number")]
-        public string Number { get; set; }
+        public int Flag { get; set; }
 
-        [Display(Name = "Item Name")]
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public int Quantity { get; set; }
 
+        [Required]
         public string Location { get; set; }
 
         public string Comments { get; set; }
 
-        [Display(Name="Manager")]
+        [Required]
         public string UserName { get; set; }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 }

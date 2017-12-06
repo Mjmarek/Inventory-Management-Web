@@ -9,14 +9,14 @@ namespace Inventory.Data
 {
     public class Employee
     {
+        [Key]
+        public int EmployeeId { get; set; }
+
         [Required]
         public string FirstName { get; set; }
 
         [Required]
         public string LastName { get; set; }
-
-        [Key]
-        public int IdNumber { get; set; }
 
         [Required]
         public string UserName { get; set; } //foreign key
