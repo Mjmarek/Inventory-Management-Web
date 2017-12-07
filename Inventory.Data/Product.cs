@@ -10,7 +10,7 @@ namespace Inventory.Data
     public class Product
     {
         [Key]
-        public string ProductId { get; set; }
+        public int ProductId { get; set; }
 
         public int Flag { get; set; }
 

@@ -3,7 +3,7 @@ namespace Inventory.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class Initialmigration : DbMigration
     {
         public override void Up()
         {
@@ -23,7 +23,7 @@ namespace Inventory.Data.Migrations
                 "dbo.Product",
                 c => new
                     {
-                        ProductId = c.String(nullable: false, maxLength: 128),
+                        ProductId = c.Int(nullable: false, identity: true),
                         Flag = c.Int(nullable: false),
                         Number = c.String(nullable: false),
                         Name = c.String(nullable: false),
