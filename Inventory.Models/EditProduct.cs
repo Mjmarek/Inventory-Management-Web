@@ -9,7 +9,7 @@ namespace Inventory.Models
 {
     public class EditProduct
     {
-        public string ProductId { get; set; }
+        public int ProductId { get; set; }
 
         [Display(Name = "Follow Up")]
         public int Flag { get; set; }
