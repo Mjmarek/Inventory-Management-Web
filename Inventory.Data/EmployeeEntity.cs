@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Inventory.Data
 {
-    public class Employee
+    public class EmployeeEntity
     {
         [Key]
         public int EmployeeId { get; set; }

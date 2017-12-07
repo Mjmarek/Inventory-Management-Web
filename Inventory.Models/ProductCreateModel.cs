@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Inventory.Models
 {
-    public class CreateProduct
+    public class ProductCreateModel
     {
         [Display(Name = "Follow Up")]
         public int Flag { get; set; }

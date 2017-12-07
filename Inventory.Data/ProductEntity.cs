@@ -5,27 +5,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inventory.Models
+namespace Inventory.Data
 {
-    public class DetailsProduct
+    public class ProductEntity
     {
-        public string ProductId { get; set; }
+        [Key]
+        public int ProductId { get; set; }
 
-        [Display(Name = "Follow Up")]
         public int Flag { get; set; }
 
-        [Display(Name = "Item Number")]
+        [Required]
         public string Number { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public int Quantity { get; set; }
 
+        [Required]
         public string Location { get; set; }
 
         public string Comments { get; set; }
 
-        [Display(Name = "Manager")]
+        [Required]
         public string UserName { get; set; }
     }
 }

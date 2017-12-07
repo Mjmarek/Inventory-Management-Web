@@ -53,14 +53,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeEntity.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\201712071901006_Initial migration.cs" />
     <Compile Include="Migrations\201712071901006_Initial migration.Designer.cs">
       <DependentUpon>201712071901006_Initial migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="ProductEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

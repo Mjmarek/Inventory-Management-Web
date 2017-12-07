@@ -9,10 +9,10 @@ namespace Inventory.Contracts
 {
     public interface IProduct
     {
-        bool CreateProduct(CreateProduct model);
-        IEnumerable<ProductListItem> GetProducts();
-        DetailsProduct GetProductById(int ProductId);//need to change type to int in table
-        bool EditProduct(EditProduct model);
+        bool CreateProduct(ProductCreateModel model);
+        IEnumerable<ProductListModel> GetProductList();
+        ProductDetailsModel GetProductById(int ProductId);
+        bool EditProduct(ProductEditModel model);
         bool DeleteProduct(int ProductId);
     }
 }

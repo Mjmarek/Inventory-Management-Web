@@ -53,11 +53,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Inventory.Contracts\Inventory.Contracts.csproj">
+      <Project>{6D370D75-D3DA-4B8C-ABF6-774854A299DD}</Project>
+      <Name>Inventory.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inventory.Data\Inventory.Data.csproj">
+      <Project>{F733AA34-52E5-41C4-9C3B-569C2FE20C42}</Project>
+      <Name>Inventory.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inventory.Models\Inventory.Models.csproj">
+      <Project>{25CECF3B-153C-475C-A58F-197A0D830ECE}</Project>
+      <Name>Inventory.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

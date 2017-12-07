@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Inventory.Models
 {
-    public class EditEmployee
+    public class EmployeeEditModel
     {
         public int EmployeeId { get; set; }
 

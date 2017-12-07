@@ -32,8 +32,8 @@ namespace Inventory.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<EmployeeEntity> Employees { get; set; }
+        public DbSet<ProductEntity> Products { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
