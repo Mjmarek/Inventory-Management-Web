@@ -10,6 +10,8 @@ namespace Inventory.Models
 
     public class EmployeeListModel
     {
+        public int EmployeeId { get; set; }
+
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 

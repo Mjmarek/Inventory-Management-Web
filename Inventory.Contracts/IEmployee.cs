@@ -10,9 +10,9 @@ namespace Inventory.Contracts
     public interface IEmployee
     {
         bool CreateEmployee(EmployeeCreateModel model);
-        IEnumerable<EmployeeListModel> GetProducts();
+        IEnumerable<EmployeeListModel> GetEmployeeList();
         EmployeeDetailsModel GetEmployeeById(int EmployeeId);
         bool EditEmployee(EmployeeEditModel model);
-        bool DeleteEmployeet(int EmployeeId);
+        bool DeleteEmployee(int EmployeeId);
     }
 }
