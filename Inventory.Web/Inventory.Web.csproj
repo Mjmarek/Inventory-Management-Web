@@ -277,6 +277,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Inventory.Contracts\Inventory.Contracts.csproj">
+      <Project>{6D370D75-D3DA-4B8C-ABF6-774854A299DD}</Project>
+      <Name>Inventory.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Inventory.Data\Inventory.Data.csproj">
       <Project>{f733aa34-52e5-41c4-9c3b-569c2fe20c42}</Project>
       <Name>Inventory.Data</Name>
