@@ -106,7 +106,7 @@ namespace Inventory.Web.Controllers
         // GET: Product/Delete/id
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
             ProductService.DeleteProduct(id);
 
