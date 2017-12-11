@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Inventory.Models.InventoryListItem>
+﻿@model IEnumerable<Inventory.Models.ProductListModel>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.IsFlagged)
+            @Html.DisplayNameFor(model => model.Flag)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Number)
@@ -38,7 +38,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.IsFlagged)
+            @Html.DisplayFor(modelItem => item.Flag)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Number)
