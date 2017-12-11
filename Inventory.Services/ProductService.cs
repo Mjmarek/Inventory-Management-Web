@@ -11,6 +11,13 @@ namespace Inventory.Services
 {
     public class ProductService : IProduct
     {
+        private readonly Guid _userId;
+
+        public ProductService(Guid userId)
+        {
+            _userId = userId;
+        }
+
         public bool CreateProduct(ProductCreateModel model)
         {
             var entity =
@@ -22,7 +29,7 @@ namespace Inventory.Services
                     Quantity = model.Quantity,
                     Location = model.Location,
                     Comments = model.Comments,
-                    UserName = model.UserName
+                    ManagerId = _userId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -38,7 +45,7 @@ namespace Inventory.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
-                    ctx.Products.Select
+                    ctx.Products.Where(e => e.ManagerId == _userId).Select
                     (e => new ProductListModel
                         {
                             ProductId = e.ProductId,
@@ -60,7 +67,8 @@ namespace Inventory.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                    ctx.Products.Single(e => e.ProductId == ProductId);
+                    ctx.Products.Single
+                        (e => e.ProductId == ProductId && e.ManagerId == _userId);
 
                 return
                     new ProductDetailsModel
@@ -82,7 +90,8 @@ namespace Inventory.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                    ctx.Products.Single(e => e.ProductId == model.ProductId);
+                    ctx.Products.Single
+                        (e => e.ProductId == model.ProductId && e.ManagerId == _userId);
 
                 entity.ProductId = model.ProductId;
                 entity.Flag = model.Flag;
@@ -91,7 +100,6 @@ namespace Inventory.Services
                 entity.Quantity = model.Quantity;
                 entity.Location = model.Location;
                 entity.Comments = model.Comments;
-                entity.UserName = model.UserName;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -102,7 +110,8 @@ namespace Inventory.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                    ctx.Products.Single(e => e.ProductId == ProductId);
+                    ctx.Products.Single
+                        (e => e.ProductId == ProductId && e.ManagerId == _userId);
 
                 ctx.Products.Remove(entity);
 

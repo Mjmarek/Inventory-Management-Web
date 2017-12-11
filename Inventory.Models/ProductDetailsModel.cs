@@ -27,5 +27,9 @@ namespace Inventory.Models
 
         [Display(Name = "Manager")]
         public string UserName { get; set; }
+
+        public Guid ManagerId { get; set; }
+
+        public override string ToString() => $"[{ProductId}] {Name}";
     }
 }

@@ -17,7 +17,6 @@ namespace Inventory.Data
         [Required]
         public string Number { get; set; }
 
-        [Required]
         public string Name { get; set; }
 
         [Required]
@@ -30,5 +29,8 @@ namespace Inventory.Data
 
         [Required]
         public string UserName { get; set; }
+
+        [Required]
+        public Guid ManagerId { get; set; }
     }
 }

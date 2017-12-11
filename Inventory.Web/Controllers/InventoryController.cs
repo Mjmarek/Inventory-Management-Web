@@ -1,4 +1,5 @@
 ﻿using Inventory.Models;
+using Inventory.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Inventory.Web.Controllers
     [Authorize]
     public class InventoryController : Controller
     {
+        
         // GET: Inventory
         public ActionResult Index()
         {

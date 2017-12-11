@@ -28,6 +28,8 @@ namespace Inventory.Models
         [Display(Name = "Manager")]
         public string UserName { get; set; } //add foreign key
 
+        public Guid ManagerId { get; set; }
+
         public override string ToString() => $"[{ProductId}] {Name}";//not sure if I need this
     }
 }
