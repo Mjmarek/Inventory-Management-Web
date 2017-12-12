@@ -19,6 +19,7 @@ namespace Inventory.Models
 
         public string Name { get; set; }
 
+        [Display(Name = "Quantity on Floor")]
         public int Quantity { get; set; }
 
         public string Location { get; set; } //locations can include combination of letters and numbers
