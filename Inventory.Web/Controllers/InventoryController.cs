@@ -111,14 +111,20 @@ namespace Inventory.Web.Controllers
         }
 
         // GET: Product/Delete/id
+        public ActionResult Delete(int id)
+        {
+            var model = ProductService.GetProductById(id);
+            return View(model);
+        }
+
+        // POST: Product/Delete/id
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public ActionResult DeleteConfirmed(int id)
         {
             ProductService.DeleteProduct(id);
 
             TempData["SaveResult"] = "The item was deleted.";
-
             return RedirectToAction("Index");
         }
 
