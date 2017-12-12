@@ -73,7 +73,8 @@ namespace Inventory.Web.Controllers
                     Name = detail.Name,
                     Quantity = detail.Quantity,
                     Location = detail.Location,
-                    Comments = detail.Comments
+                    Comments = detail.Comments,
+                    UserName = detail.UserName
                 };
 
             return View(model);
