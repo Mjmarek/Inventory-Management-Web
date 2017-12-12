@@ -12,7 +12,7 @@ namespace Inventory.Models
         public int ProductId { get; set; }
        
         [Display(Name = "Follow Up")]
-        public int Flag { get; set; }
+        public int? Flag { get; set; }
 
         [Display(Name = "Item Number")]
         public string Number { get; set; } //item numbers include both letters & numbers
@@ -26,9 +26,7 @@ namespace Inventory.Models
         public string Comments { get; set; }
 
         [Display(Name = "Manager")]
-        public string UserName { get; set; } //add foreign key
-
-        public Guid ManagerId { get; set; }
+        public string UserName { get; set; }
 
         public override string ToString() => $"[{ProductId}] {Name}";//not sure if I need this
     }

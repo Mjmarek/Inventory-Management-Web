@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Inventory.Data
 {
-    public class ProductEntity
+    public class Product
     {
         [Key]
         public int ProductId { get; set; }
 
-        public int Flag { get; set; }
+        public int? Flag { get; set; }
 
         [Required]
         public string Number { get; set; }
@@ -29,8 +29,5 @@ namespace Inventory.Data
 
         [Required]
         public string UserName { get; set; }
-
-        [Required]
-        public Guid ManagerId { get; set; }
     }
 }

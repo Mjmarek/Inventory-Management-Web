@@ -21,15 +21,14 @@ namespace Inventory.Services
         public bool CreateProduct(ProductCreateModel model)
         {
             var entity =
-                new ProductEntity
+                new Product
                 {
                     Flag = model.Flag,
                     Number = model.Number,
                     Name = model.Name,
                     Quantity = model.Quantity,
                     Location = model.Location,
-                    Comments = model.Comments,
-                    ManagerId = _userId
+                    Comments = model.Comments
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -45,7 +44,7 @@ namespace Inventory.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
-                    ctx.Products.Where(e => e.ManagerId == _userId).Select
+                    ctx.Products.Select
                     (e => new ProductListModel
                         {
                             ProductId = e.ProductId,
@@ -68,7 +67,7 @@ namespace Inventory.Services
             {
                 var entity =
                     ctx.Products.Single
-                        (e => e.ProductId == ProductId && e.ManagerId == _userId);
+                        (e => e.ProductId == ProductId);
 
                 return
                     new ProductDetailsModel
@@ -91,7 +90,7 @@ namespace Inventory.Services
             {
                 var entity =
                     ctx.Products.Single
-                        (e => e.ProductId == model.ProductId && e.ManagerId == _userId);
+                        (e => e.ProductId == model.ProductId);
 
                 entity.ProductId = model.ProductId;
                 entity.Flag = model.Flag;
@@ -111,7 +110,7 @@ namespace Inventory.Services
             {
                 var entity =
                     ctx.Products.Single
-                        (e => e.ProductId == ProductId && e.ManagerId == _userId);
+                        (e => e.ProductId == ProductId);
 
                 ctx.Products.Remove(entity);
 

@@ -13,7 +13,7 @@ namespace Inventory.Models
         public int ProductId { get; set; }
 
         [Display(Name = "Follow Up")]
-        public int Flag { get; set; }
+        public int? Flag { get; set; }
 
         [Required]
         [Display(Name = "Item Number")]

@@ -12,7 +12,7 @@ namespace Inventory.Models
         public int ProductId { get; set; }
 
         [Display(Name = "Follow Up")]
-        public int Flag { get; set; }
+        public int? Flag { get; set; }
 
         [Display(Name = "Item Number")]
         public string Number { get; set; }
@@ -27,8 +27,6 @@ namespace Inventory.Models
 
         [Display(Name = "Manager")]
         public string UserName { get; set; }
-
-        public Guid ManagerId { get; set; }
 
         public override string ToString() => $"[{ProductId}] {Name}";
     }
