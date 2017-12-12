@@ -4,20 +4,13 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Item Details</h2>
 
 <div>
-    <h4>ProductDetailsModel</h4>
+    <h4>Inventory information about a specific product.</h4>
     <hr />
+    @Html.HiddenFor(model => model.ProductId)
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProductId)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Flag)
         </dt>

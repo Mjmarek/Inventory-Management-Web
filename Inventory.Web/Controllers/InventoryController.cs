@@ -38,6 +38,12 @@ namespace Inventory.Web.Controllers
         }
 
         // GET: Product/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Product/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ProductCreateModel model)

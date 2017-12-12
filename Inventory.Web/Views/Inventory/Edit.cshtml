@@ -16,7 +16,6 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ProductId)
-        @*add hidden field for guid too so username can be referenced?*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Flag, htmlAttributes: new { @class = "control-label col-md-2" })
