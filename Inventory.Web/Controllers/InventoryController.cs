@@ -99,7 +99,7 @@ namespace Inventory.Web.Controllers
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Your item could not be updated.");
+            ModelState.AddModelError("", "Please make changes before trying to save.");
             return View(model);
         }
 

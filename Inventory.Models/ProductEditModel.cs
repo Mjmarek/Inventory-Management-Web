@@ -23,7 +23,6 @@ namespace Inventory.Models
         public string Name { get; set; }
 
         [Required]
-        [MinLength(1, ErrorMessage = "Please enter the number of items on the floor in the specified location.")]
         [Display(Name = "Quantity on Floor")]
         public int Quantity { get; set; }
 

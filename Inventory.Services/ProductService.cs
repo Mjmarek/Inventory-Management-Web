@@ -99,6 +99,7 @@ namespace Inventory.Services
                 entity.Quantity = model.Quantity;
                 entity.Location = model.Location;
                 entity.Comments = model.Comments;
+                entity.UserName = model.UserName;
 
                 return ctx.SaveChanges() == 1;
             }
