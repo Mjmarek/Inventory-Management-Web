@@ -21,7 +21,7 @@ namespace Inventory.Web.Controllers
 
         public InventoryController()
         {
-            _productService = new Lazy<IProduct>(() => new ProductService(Guid.Parse(User.Identity.GetUserId())));
+            _productService = new Lazy<IProduct>(() => new ProductService(User));
         }
 
         //For Testing

@@ -1,25 +1,38 @@
 ﻿using Inventory.Contracts;
 using Inventory.Data;
 using Inventory.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Principal;
+using System.Text.RegularExpressions;
 
 namespace Inventory.Services
 {
     public class ProductService : IProduct
     {
         private readonly Guid _userId;
+        private IPrincipal user;
 
         public ProductService(Guid userId)
         {
             _userId = userId;
         }
 
+        public ProductService(IPrincipal user)
+        {
+            this.user = user;
+        }
+
         public bool CreateProduct(ProductCreateModel model)
         {
+            string pattern;
+            pattern = "@.*";
+            Regex rgx = new Regex(pattern);
+
             var entity =
                 new Product
                 {
@@ -28,7 +41,8 @@ namespace Inventory.Services
                     Name = model.Name,
                     Quantity = model.Quantity,
                     Location = model.Location,
-                    Comments = model.Comments
+                    Comments = model.Comments,
+                    UserName = rgx.Replace(user.Identity.Name, "")
                 };
 
             using (var ctx = new ApplicationDbContext())
