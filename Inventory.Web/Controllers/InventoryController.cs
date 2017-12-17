@@ -68,7 +68,7 @@ namespace Inventory.Web.Controllers
                 new ProductEditModel
                 {
                     ProductId = detail.ProductId,
-                    Flag = detail.Flag,
+                    Flag = (ProductAvailability?)detail.Flag,
                     Number = detail.Number,
                     Name = detail.Name,
                     Quantity = detail.Quantity,

@@ -87,7 +87,7 @@ namespace Inventory.Services
                     new ProductDetailsModel
                     {
                         ProductId = entity.ProductId,
-                        Flag = entity.Flag,
+                        Flag = (ProductAvailability?)entity.Flag,
                         Number = entity.Number,
                         Name = entity.Name,
                         Quantity = entity.Quantity,
@@ -107,7 +107,7 @@ namespace Inventory.Services
                         (e => e.ProductId == model.ProductId);
 
                 entity.ProductId = model.ProductId;
-                entity.Flag = model.Flag;
+                entity.Flag = (int?)model.Flag;
                 entity.Number = model.Number;
                 entity.Name = model.Name;
                 entity.Quantity = model.Quantity;

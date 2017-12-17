@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Inventory.Models
 {
@@ -12,7 +13,31 @@ namespace Inventory.Models
         public int ProductId { get; set; }
 
         [Display(Name = "Follow Up")]
-        public int? Flag { get; set; }
+        public ProductAvailability? Flag { get; set; }
+        public string AvailabilityName =>
+            (FlagCategoryList.FirstOrDefault(sli => int.Parse(sli.Value) == (int?)Flag))?.Text;
+
+
+        public IEnumerable<SelectListItem> FlagCategoryList => new List<SelectListItem>
+        {
+            new SelectListItem
+            {
+                Text = "Available",
+                Value = ((int)ProductAvailability.Available).ToString()
+            },
+
+            new SelectListItem
+            {
+                Text = "On Order",
+                Value = ((int)ProductAvailability.OnOrder).ToString()
+            },
+
+            new SelectListItem
+            {
+                Text = "Not Available",
+                Value = ((int)ProductAvailability.NotAvailable).ToString()
+            }
+        };
 
         [Display(Name = "Item Number")]
         public string Number { get; set; }
