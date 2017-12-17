@@ -14,13 +14,6 @@ namespace Inventory.Data
 
         public int? Flag { get; set; }
 
-        public enum FlagColor
-        {
-            //green rgb(0, 153, 0) #009900 hue 120,
-            //red rgb(255, 0, 0) #ff0000 hue 0,
-            //yellow rgb(255, 255, 0) #ffff00 hue 60
-        }
-
         [Required]
         public string Number { get; set; }
 

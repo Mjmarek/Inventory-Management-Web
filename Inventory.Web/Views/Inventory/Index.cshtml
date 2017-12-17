@@ -38,7 +38,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Flag)
+            @if (item.Flag != null)
+            {
+                @:<span class="glyphicon glyphicon-flag" style="color:@item.FlagColor;" title="@item.FlagCategory"></span>
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Number)

@@ -10,7 +10,7 @@ namespace Inventory.Models
     public class ProductCreateModel
     {
         [Display(Name = "Follow Up")]
-        public int? Flag { get; set; }
+        public ProductAvailability? Flag { get; set; }
 
         [Required]
         [MinLength(5, ErrorMessage = "Please enter the product's item number.")]

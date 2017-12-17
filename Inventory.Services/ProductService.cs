@@ -36,7 +36,7 @@ namespace Inventory.Services
             var entity =
                 new Product
                 {
-                    Flag = model.Flag,
+                    Flag = (int?)model.Flag,
                     Number = model.Number,
                     Name = model.Name,
                     Quantity = model.Quantity,
@@ -62,7 +62,7 @@ namespace Inventory.Services
                     (e => new ProductListModel
                         {
                             ProductId = e.ProductId,
-                            Flag = e.Flag,
+                            Flag = (ProductAvailability?)e.Flag,
                             Number = e.Number,
                             Name = e.Name,
                             Quantity = e.Quantity,
