@@ -4,6 +4,7 @@ using Inventory.Contracts;
 using Inventory.Models;
 using Inventory.Web.Controllers;
 using Telerik.JustMock;
+using System.Web.Mvc;
 
 namespace ProductServices.Test
 {

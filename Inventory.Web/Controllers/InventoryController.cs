@@ -40,7 +40,7 @@ namespace Inventory.Web.Controllers
         // GET: Product/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new ProductCreateModel());
         }
 
         // POST: Product/Create
