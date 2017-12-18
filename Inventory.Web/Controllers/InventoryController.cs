@@ -24,12 +24,6 @@ namespace Inventory.Web.Controllers
             _productService = new Lazy<IProduct>(() => new ProductService(User));
         }
 
-        //For Testing
-        public InventoryController(Lazy<IProduct> productService)
-        {
-            _productService = productService;
-        }
-
         // GET: Product
         public ActionResult Index()
         {
@@ -68,7 +62,7 @@ namespace Inventory.Web.Controllers
                 new ProductEditModel
                 {
                     ProductId = detail.ProductId,
-                    Flag = (ProductAvailability?)detail.Flag,
+                    Flag = detail.Flag,
                     Number = detail.Number,
                     Name = detail.Name,
                     Quantity = detail.Quantity,
