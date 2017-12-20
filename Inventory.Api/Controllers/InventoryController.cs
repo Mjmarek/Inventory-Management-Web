@@ -15,8 +15,7 @@ namespace Inventory.Api.Controllers
     {
         public IHttpActionResult GetAllProducts()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var productService = new ProductService(userId);
+            var productService = new ProductService(User);
             var products = productService.GetProductList();
 
             return Ok(products);
@@ -24,7 +23,7 @@ namespace Inventory.Api.Controllers
 
         public IHttpActionResult Get(int id)
         {
-            var productService = new ProductService(Guid.Parse(User.Identity.GetUserId()));
+            var productService = new ProductService(User);
             var product = productService.GetProductById(id);
 
             if (product == null) return NotFound();
@@ -36,7 +35,7 @@ namespace Inventory.Api.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var productService = new ProductService(Guid.Parse(User.Identity.GetUserId()));
+            var productService = new ProductService(User);
 
             return Ok(productService.CreateProduct(model));
         }
@@ -45,7 +44,7 @@ namespace Inventory.Api.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var productService = new ProductService(Guid.Parse(User.Identity.GetUserId()));
+            var productService = new ProductService(User);
             var temp = productService.GetProductById(model.ProductId);
 
             if (temp == null) return NotFound();
@@ -57,7 +56,7 @@ namespace Inventory.Api.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var productService = new ProductService(Guid.Parse(User.Identity.GetUserId()));
+            var productService = new ProductService(User);
             var temp = productService.GetProductById(id);
 
             if (temp == null) return NotFound();

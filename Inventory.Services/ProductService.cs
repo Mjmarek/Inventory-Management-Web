@@ -17,11 +17,6 @@ namespace Inventory.Services
         private readonly Guid _userId;
         private IPrincipal user;
 
-        public ProductService(Guid userId)
-        {
-            _userId = userId;
-        }
-
         public ProductService(IPrincipal user)
         {
             this.user = user;
