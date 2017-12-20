@@ -25,7 +25,7 @@ namespace Inventory.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/creative.css"));
+                      "~/Content/main.css"));
         }
     }
 }
