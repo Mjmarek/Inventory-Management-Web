@@ -13,7 +13,7 @@
     <div class="row">
         <div class="header-nav-wrapper">
             <div class="logo">
-                <a href="/index.html"><img src="img/synthetica-logo.png" alt="Inventory Management"></a>
+                @Html.ActionLink("Inventory Management", "Index", "Home")
             </div>
             <div class="primary-nav-wrapper">
                 <nav>
@@ -32,7 +32,7 @@
                 @RenderBody()
                 <hr />
                 <footer>
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                    <p>&copy; @DateTime.Now.Year - Inventory Management App</p>
                 </footer>
             </div>
         </div>
