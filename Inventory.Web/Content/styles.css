@@ -1956,7 +1956,7 @@ input, textarea {
     }
 
         .header-nav-wrapper nav ul {
-            display: inline-block
+            display: inline-block;
         }
 
             .header-nav-wrapper nav ul li {
@@ -1974,6 +1974,7 @@ input, textarea {
 
                 .header-nav-wrapper nav ul li a {
                     font-weight: 600;
+                    display: inline-block;
                     position: relative;
                     padding-bottom: 10px;
                     text-decoration: none;
